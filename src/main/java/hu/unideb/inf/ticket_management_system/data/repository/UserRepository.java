@@ -9,11 +9,10 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-    // Felhasználó keresése felhasználónév alapján (pl. bejelentkezéshez)
-    // Az Optional használata biztonságosabb, jelzi, hogy lehet, hogy nincs ilyen felhasználó
+    // Felhasználó keresése felhasználónév alapján
     Optional<UserEntity> findByUsername(String username);
 
-    // Felhasználó keresése e-mail cím alapján (pl. regisztrációs ellenőrzéshez)
+    // Felhasználó keresése e-mail cím alapján
     Optional<UserEntity> findByEmail(String email);
 
     // Ellenőrzés, hogy létezik-e már adott felhasználónév vagy e-mail
